@@ -72,11 +72,11 @@ for ev in catalog:
             print(tr1)
             print(tr)
 
-            # try:
-            #     dt, coeff = xcorr_pick_correction(t1, tr1, t0, tr, -600, 600, 600, plot=False)
-            #     print('made it past xcorr')
-            # except Exception as e : print('cross correlation error')
-            dt, coeff = xcorr_pick_correction(t1, tr1, t0, tr, -600, 600, 600, plot=False)
+            try:
+               dt, coeff = xcorr_pick_correction(t1, tr1, t0, tr, -600, 600, 600, plot=False)
+               print('made it past xcorr')
+            except Exception as e : print('cross correlation error')
+            #dt, coeff = xcorr_pick_correction(t1, tr1, t0, tr, -600, 600, 600, plot=False)
             if coeff>0.6:
                 print('  Filename:{0}'.format(filename))
                 print("  Time correction for pick 2: %.6f" % dt)
